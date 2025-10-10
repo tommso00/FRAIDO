@@ -24,13 +24,19 @@ header {
     z-index: 1000;
 }
 
-.logo {
+@media (max-width: 600px) {
+  .logo {
+    width: 90vw;         /* il logo occuperà il 90% della larghezza schermo */
+    max-width: 280px;    /* dimensione massima */
+    min-width: 80px;     /* opzionale: dimensione minima */
     display: block;
     margin: 0 auto;
-    width: 1000px;
-    transition: all 0.5s cubic-bezier(.4, 0, .2, 1);
-    position: relative;
+  }
+  header {
+    padding: 10px 0;     /* padding ridotto su mobile */
+  }
 }
+
 
 .logo.scrolled {
     position: fixed;
