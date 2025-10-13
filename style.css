@@ -136,23 +136,31 @@ nav ul li:hover {
     padding: 15px;
 }
 
-.accordion-item {
-    text-align: left; /* Allinea testi e contenuti a sinistra */
+/*.accordion-item {
+    text-align: left; /* Allinea testi e contenuti a sinistra 
     margin-top: 16px;
-    margin-left: 10%;  /* Piccolo margine da sinistra per distanziare dal bordo */
-    margin-right: 10%; /* Stessa distanza a destra per uniformità */
-    width: 80%; /* Assicura che il contenitore non sia troppo largo */
+    margin-left: 10%;  /* Piccolo margine da sinistra per distanziare dal bordo 
+    margin-right: 10%; /* Stessa distanza a destra per uniformità 
+    width: 80%; /* Assicura che il contenitore non sia troppo largo 
+} */
+
+.accordion-item {
+    border-bottom: 3px solid #7ea1d4;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
-.accordion-item:not(:last-child) {
-    border-bottom: 3px solid #7ea1d4; /* linea più spessa e colore più marcato */
+/*.accordion-item:not(:last-child) {
+    border-bottom: 3px solid #7ea1d4; /* linea più spessa e colore più marcato 
     margin-bottom: 16px;
     padding-bottom: 16px;
-    width: 80%; /* linea più corta */
+    width: 80%; /* linea più corta 
     margin-left: auto;
-    margin-right: auto; /* centrata orizzontalmente */
-}
+    margin-right: auto; /* centrata orizzontalmente 
+}*/
 
 
 .team-container {
