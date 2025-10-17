@@ -4,19 +4,29 @@ on:
   push:
     branches:
       - main
-
+        
 jobs:
   web-deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: FTP Deploy
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
-      with:
-        server: ftp.fraido.it
-        username: ${{ secrets.FTP_USER }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./
-        server-dir: /www.fraido.it/
-        
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set version variable
+        id: vars
+        run: echo "VERSION=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      - name: Replace CSS & JS version strings in HTML
+        run: |
+          sed -i "s/style.css/style.css?v=${VERSION}/g" index.html
+          sed -i "s/script.js/script.js?v=${VERSION}/g" index.html
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ftp.fraido.it
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /
