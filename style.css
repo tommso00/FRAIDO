@@ -131,7 +131,7 @@ nav ul li:hover {
 }
 
 .accordion-checkbox:checked ~ .accordion-content {
-    max-height: 1200px;
+    max-height: 12000px;
     opacity: 1;
     padding: 15px;
 }
@@ -255,6 +255,7 @@ footer {
   height: 0;
   overflow: hidden;
   border-radius: 10px; /* opzionale, per uniformità */
+  margin-bottom: 24px;
 }
 .video-responsive iframe {
   position: absolute;
@@ -264,6 +265,13 @@ footer {
   height: 100%;
   border: 0;
 }
+.video-responsive video {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* se vuoi riempire sempre, oppure "contain" per nessun taglio */
+}
+
 
 .gif-animata {
     display: block;
@@ -302,4 +310,25 @@ footer {
     overflow-wrap: break-word;
     word-break: break-word;
   }
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  margin-top: 6px;
+  color: #fff;
+  background: linear-gradient(135deg,#4699e6,#2b63b6);
+  border-radius: 7px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(33, 115, 204, 0.13);
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #2b63b6, #4699e6);
+  color: #fff;
 }
